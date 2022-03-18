@@ -1,1 +1,1 @@
-print("Halo Parabola")
+print("cek")
