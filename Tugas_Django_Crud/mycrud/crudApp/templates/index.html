@@ -16,37 +16,39 @@
                 {{message}}
             </div>
             {% endfor %}
+        
         {% endif%}
+
         <div class="row">
             <div class="col-sm-4 text-center py-5 ">
-                <div class="alert alert-info text-center">Add Student Data</div>
+                <div class="alert alert-info text-center">Tambahkan Data Siswa</div>
                 <form method="POST" novalidate> {% csrf_token %}
                     {% for form in fm %}
                     <br>
                     <span class="text-danger">{{form.errors}}</span><br>
                     <label>{{form.label}}</label> {{form}}<br>
                     {% endfor %} <br>
-                    <button class="btn btn-primary btn-lg" type="submit">Add</button>
+                    <button class="btn btn-primary btn-lg" type="submit">Tambahkan</button>
                 </form>
             </div>
             <div class="col-sm-8 p-5">
-                <div class="alert alert-info text-center">Student Data</div>
+                <div class="alert alert-info text-center">Data Siswa</div>
                 <table class="table">
                     <thead>
-                        <td>rollno</td>
-                        <td>name</td>
-                        <td>email</td>
-                        <td>Update/Delete</td>
+                        <td>Nomor</td>
+                        <td>Nama</td>
+                        <td>Email</td>
+                        <td>Ubah/Hapus</td>
                     </thead>
                     {%for data in studata%}
                     <tr>
-                        <td>{{data.rollno}}</td>
-                        <td>{{data.name}}</td>
-                        <td>{{data.email}}</td>
+                        <td>{{data.Nomor}}</td>
+                        <td>{{data.Name}}</td>
+                        <td>{{data.Email}}</td>
                         <td>
                         <div class="d-flex">
-                            <a href="update/{{data.id}}/" class="btn btn-success btn-sm mx-1">Edit</a>
-                            <a href="delete/{{data.id}}/" class="btn btn-danger btn-sm mx-1">Delete</a>
+                            <a href="update/{{data.id}}/" class="btn btn-success btn-sm mx-1">Ubah</a>
+                            <a href="delete/{{data.id}}/" class="btn btn-danger btn-sm mx-1">Hapus</a>
                         </div>
                         </td>
                     </tr>
